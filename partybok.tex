@@ -1,0 +1,517 @@
+\documentclass[a5paper]{article}
+\usepackage[body={10cm,17cm}]{geometry}
+\usepackage[a5,center,off]{crop}
+
+\usepackage{blindtext}
+\usepackage{tikz}
+\usetikzlibrary{calc}
+\usepackage[utf8]{inputenc}
+\usepackage{multicol}
+\usepackage{pdflscape}
+\usepackage{longtable}
+\usepackage{xcolor}
+\setlength{\columnsep}{2cm}
+\usepackage{fancyhdr}
+\usepackage{everypage}
+\usepackage{lipsum}
+\usepackage{array}
+\usepackage{lipsum}
+\usepackage{tikz}
+
+
+%\renewcommand{\thesection}{}
+%\renewcommand{\thesubsection}{}
+\setcounter{secnumdepth}{0}
+\renewcommand{\contentsname}{Innehållsförteckning}
+
+\newcommand*\circled[1]{\tikz[baseline=(char.base)]{
+		\node[shape=circle,draw,inner sep=2pt, color=red] (char) {#1};}}
+
+
+\newcolumntype{N}{>{\raggedright\arraybackslash}p{3cm}}
+\newcolumntype{L}{>{\raggedright\arraybackslash}p{8cm}}
+\newcommand{\defpage}{\newgeometry{left=1.2cm,bottom=1.2cm,top=1.2cm,right=1cm}}
+
+\begin{document}
+	
+	
+\defpage
+	
+	\begin{titlepage}
+		\noindent
+		%\includegraphics[width=2cm]{logo.jpg}\\[-1em]
+		\makebox[0pt][l]{\rule{1.3\textwidth}{1pt}}
+		\par
+		\noindent
+		\textbf{\textsf{Emma och Johnnys bröllop}}
+		\vfill
+		\noindent
+		{\huge \textsf{Nu jävlar ska det firas!}}
+		\vskip\baselineskip
+		\noindent
+		\textsf{Oktober 2018}
+	\end{titlepage}
+	
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	% reset header and footer:
+	\pagestyle{fancy}
+	\lhead{}\chead{}\rhead{}
+	\cfoot{\vspace*{-2\baselineskip}\thepage}
+	
+		
+	\section{Välkomna}
+	\newpage
+	
+	\tableofcontents
+	\newpage
+	
+	
+	\thispagestyle{empty}
+	\restoregeometry % restores the geometry
+	
+	\begin{landscape}
+	\addcontentsline{toc}{section}{Bordsplacering}
+		
+	\begin{tikzpicture}[remember picture, overlay]
+	
+	\node[inner sep=0pt] (borsplacering) at (7.6, -4.2) {\includegraphics[width=1.35\paperwidth]{Bordsplacering.jpg}} ;
+	
+	\node[] (Bord 1) at (0.5,-0.8) {\circled{1}};
+	\node[] (Bord 2) at (3,-0.8) {\circled{2}};
+	\node[text=purple] at (7.6,-0.90) {Honnörsbordet};
+	\node[] (Bord 3) at (11.5,-0.8) {\circled{3}};
+	\node[] (Bord 4) at (13.7,-0.8) {\circled{4}};
+	% Rad 2		
+	\node[] (Bord 5) at (0.5,-4.1) {\circled{5}};
+	\node[] (Bord 6) at (3.1,-4.1) {\circled{6}};
+	\node[] (Bord 7) at (10,-4.1) {\circled{7}};
+	\node[] (Bord 8) at (12.5,-4.1) {\circled{8}};
+	\node[] (Bord 9) at (15,-4.1) {\circled{9}};
+	% Rad 3
+	\node[] (Bord 10) at (0.5,-7.4) {\circled{10}};
+	\node[] (Bord 11) at (3,-7.4) {\circled{11}};
+	\node[] (Bord 12) at (12.4,-7.4) {\circled{12}};
+	\node[] (Bord 13) at (14.8,-7.4) {\circled{13}};
+	
+	\node[] (Page no) at (7.8,-11.5) {\thepage};
+	\end{tikzpicture}
+	\end{landscape}
+	
+	
+	\newgeometry{left=0.3cm,bottom=0cm,top=0.3cm,right=0.3cm}
+	\begin{landscape}
+		\begin{tikzpicture}[remember picture, overlay]
+		\node[] (Page no) at (10,-13.8) {\thepage};		
+		\end{tikzpicture}
+		\begin{center}
+			
+		\begin{tabular}{  l l l l l l}	
+		\multicolumn{6}{c}{\textbf{Honnörsbordet}} 				\\ \hline
+		Lennart Hedin	&	Laura Betnér	&	Johnny Merkel	&	Emma Merkel	&	Robert Janson	&	Hedvig Hedin    \\ 
+		Marie-Louise Merkel	&	Joel Säll	&	Kristina Hedin	&	Stefan Wass	&	Caroline Assarsson	&	Jonas Merkel \\ \hline
+		\end{tabular}										\\
+		\end{center}
+ 		
+ 		
+	\begin{center}
+		\begin{tabular}{  l  l } 
+			\multicolumn{2}{c}{\textbf{Bord 1}}     \\ \hline
+			Gunilla Hedin      & Elisabet Ingmanson \\ 
+			Jörgen Möller      & Per Ingmansson   	\\ 
+			Anna-Ida Bergström & Birgitta Merkel    \\ 
+			&										\\ 
+			
+			\multicolumn{2}{c}{\textbf{Bord 2}} 	\\ \hline
+			Rebecka Merkel	&	Fredrik Valdeson	\\
+			Peter Levin	&	Helena Sjöström			\\ 
+			Camille Andersson	&	Richard Skogh	\\ 
+			&		\\ 
+			\multicolumn{2}{c}{\textbf{Bord 3}} \\ \hline
+			Gabriella Hedin	&	Alex Hansen		\\
+			Stefan Möller	&	Elin Nilsson	\\ 
+			Louise Selga	&	Thomas Niwong	\\  
+			&									\\ 
+			
+			\multicolumn{2}{c}{\textbf{Bord 4}} \\ \hline
+			Björn Karmbro	&	Siv Karmbro		\\
+			Helena Niwong	&	Carl Wiklund	\\ 
+			Maria Busck	&	Per Wahlstedt		\\ 
+			&									\\ 
+			
+			\multicolumn{2}{c}{\textbf{Bord 5}} 				\\ \hline
+			Viktor Ingemansson	&	Victoria Wahlbom Helström	\\
+			Moa Chley Tegnelund	&	Erik Bratsröm				\\ 
+			Jacob Lidman	&	Anna Våhlin						\\ 
+			& \\  
+			
+			\multicolumn{2}{c}{\textbf{Bord 6}} 		\\ \hline
+			Katja Wigren	&	Gustav Svebring			\\
+			Carl-David Ekblom	&	Emma Thorstenson	\\ 
+			Anna Möller	&	Daniel Svärd				\\ 
+			
+		\end{tabular}
+		\quad \hspace*{2cm}
+		\begin{tabular}{  l  l }
+				\multicolumn{2}{c}{\textbf{Bord 7}} 				\\ \hline
+				Anna Joelsson	&	Björn Andersson	\\
+				Axel Merkel		&	Maria Karlsson	\\ 
+				Erika Holmer	&	Gustav Svanfeldt	\\ 
+				&										\\ 
+				
+				\multicolumn{2}{c}{\textbf{Bord 8}} 				\\ \hline
+				Matilda Arro	&	Wiktor Holstenson	\\
+				Mattias Kardell	&	Lars Johannesson	\\ 
+				Ida Grandell	&	Annabel Merkel	\\ 
+				&										\\ 
+				
+				\multicolumn{2}{c}{\textbf{Bord 9}} 				\\ \hline
+				Roger Alne	&	Annika Andersson	\\
+				Marie Ericsson	&	Mikael Bergström	\\ 
+				Alexander Vidar	&	Sanna Lowén	\\
+				&										\\ 
+				
+				\multicolumn{2}{c}{\textbf{Bord 10}} 				\\ \hline
+				Ellen Lynghed	&	Tobias Möller	\\
+				Malin Svebring	&	Maja Möller	\\ 
+				Magnus Merkel	&	Erik Persson	\\ 
+				&										\\ 
+				
+				\multicolumn{2}{c}{\textbf{Bord 11}} 				\\ \hline
+				Jeanette Bosund	&	Hanna Jonsson	\\
+				Robert Eriksen	&	Linda Eriksen	\\ 
+				Kalle Bosund	&	Henrik Söderström	\\ 
+				&										\\ 
+				
+				\multicolumn{2}{c}{\textbf{Bord 12}} 				\\ \hline
+				Malin Lindström	&	Andree Krantz Rosenquist	\\
+				Kjell Pollack	&	Fia Storkull	\\ 
+				Anna Merkel Möller	&	Amir Mothagi	\\ 		
+		\end{tabular}
+	\end{center}
+	\newpage
+	
+	\begin{tikzpicture}[remember picture, overlay]
+	\node[] (Page no) at (10,-13.8) {\thepage};		
+	\end{tikzpicture}
+	
+		\begin{tabular}{  l  l }
+			\multicolumn{2}{c}{\textbf{Bord 13}} 				\\ \hline
+			Renisa Kokoneshi	&	Hampus Lynghed	\\
+			Jonatan Hermansson	&	Lara Borges	\\ 
+			Ooy Ingmansson	&	Roger Österback	\\ 
+			&										\\ 
+		\end{tabular}
+		
+	\end{landscape}
+	
+	\restoregeometry
+	\newpage
+	
+	%%
+	
+	\defpage
+	\section{Gäster}
+	
+		\renewcommand*{\arraystretch}{1.8}
+		\begin{longtable}[l]{N|L}
+			%\caption{}\\
+			%\hline
+			\textbf{Namn} & \textbf{Beskrivning} \\ \hline
+			\endfirsthead \hline
+			%\endhead
+			\multicolumn{2}{r}{\textit{Forstättning på nästa sida}} \\ \endfoot
+			\hline
+			\endlastfoot
+				Alexander Hansen	&	Sambo med brudens lillasyster. Biodlande stockholmsbo. Snabb som en iller i skogen, gärna jagandes kontroller och kantareller	\\
+				Alexander Vidar	&	Vän från scouerna och balpartner till bruden. Kaffe älskande göteborgsbo 	\\
+				Amir Mothagi	&	Vän till brudgummen från universitetet. Stockholmsbo som levde rövare med brudgummen i Prag. Sambo med Lara 	\\
+				Andree Krantz Rosenquist	&	Vän till brudgummen från gymnasiet. Tranåsbo med nära band till USA	\\
+				Anna Joelsson	&	Vän till bruden från universitetet och medlem i BP. Orkesterspelande lantmätare, ständigt på resande fot.	\\
+				Anna Merkel Möller	&	Faster till brudgummen. Till vardags rektor i Eslöv, älskar skidåkning, vandring och resor   	\\
+				Anna Möller	&	Vän till bruden från universitetet och medlem i BP'. Lantmätare i Uppsala, med rötter i Strängnäs som gärna sjunger i skalor. Sambo med Erik P.	\\
+				Anna Våhlin	&	Vän till bruden från gymnasiet. Pysslig Linköpingsbo som gärna hänger på Gotland.	\\
+				Anna-Ida Bergström	&	Fru till brudens kusin Mikael. Dalkulla boende i Stockholm. Skidtränare med stort löpintresse.	\\
+				Annabel Merkel	&	Kusin till brudgummen. Hästintresserad med stort resintresse. Boendes i Malmö, kombo med magiska kaninen Merlin	\\
+				Annika Andersson	&	Vän till bruden från universitetet och medlem i BP. Lantmätare. Ursprungligen från Eslöv, nu boende i Ängelholm tillsammans med Bjön och två gullungar	\\
+				Axel Merkel	&	Kusin till brudgummen och TM kvällen till ära. Bor och doktorerar i Molde, Norge. Föredetta kombo med brudgummen, på den tiden då broccoli var för dyrt 	\\
+				Birgitta Merkel	&	Farmor till brudgummen. Bridgespelare, reser gärna både utrikes och inrikes till släkt och vänner. 	\\
+				Björn Andersson	&	Sambo till Annika. Stor BP-supporter. Trodde vid tillfälle att bruden var frireligös.	\\
+				Björn Karmbro	&	Morfar till brudgummen. Golfspelare med IT-intresse, går gärna promenader.  	\\
+				Camille Andersson	&	Barndomsvän till bruden. Katrineholmsbo som gillar pyssel, matlagning och promenader.	\\
+				Carl Wiklund	&	Barndomsvän till brudgummen. Malmöbo och en grym vollybollspelare. Har parkerat brudgummens cykel på ett tak. Sambo med Maria B.	\\
+				Carl-David Ekblom	&	Vän till brudgummen från universitetet. Föredetta paintballproffs, skidtok och allmän prylnörd. Sambo med Ida.	\\
+				Caroline Assarsson	&	Vän till bruden från universitetet och medlem i BP. Lantmätare som var brudens bättre(?) hälft när de bodde i München. Gift med Victor.	\\
+				Daniel Svärd	&	Vän och kollega till brudgummen. Gillar klättring och frilutfsliv. Sprungit marathon och åkt vasalopp med brudgummen.  Sambo med Erika.	\\
+				Elin Nilsson	&	Sambo med Peter. Arbetar som lärare i Linköping, är intruktör på Friskis och springer mycket.	\\
+				Ellen Lynghed	&	Sambo med Hampus. Malmöbo med stort intresse för brädspel.	\\
+				Emma Thorstenson	&	Vän till brudgummen från universitetet. Second hand och vintageintresserad linköpingsbo. Sambo med Roger.	\\
+				Erik Bratsröm	&	Vän till brudgummen från universitetet. Ägare till både bil, båt och motorcykel. OBS! Lägg honom ej i solen, han bränner sig lätt. Sambo till Matilda.	\\
+				Erik Persson	&	Sambo med Anna M. Bandyspelande uppsalabo med rötter i Edsbyn. 	\\
+				Erika Holmer	&	Sambo med Daniel. Friluftsintresserad klättrare som helst tar sig fram till fot.	\\
+				Fia Storkull	&	Sambo med Jonathan.  Har sommarstuga med obligatorisk bastu i Finland. Bor i samma BRF som brudens föräldrar.	\\
+				Fredrik Valdeson	&	Sambo med Laura. Instrumentspelande Uppsalabo med intresse för fornskrift.	\\
+				Gabriella Hedin	&	Brudens storasyster. Älskar klättring och att vattna trdgårdslandet. Snabb i spåret men har inte slagit brudens marathontid. Sambo med Robert J.	\\
+				Gunilla Hedin	&	Faster till bruden. Dalabo som gärna spenderar sommaren på Vätö.	\\
+				Gustav Svanfeldt	&	Vän och kollega till brudgummen. Har kört Iron man med brudgummen. Stort intresse för cyklar och ölbrygging.	\\
+				Gustav Svebring	&	Gift med Malin S. Lantmätare och BP-fan. Golfspelande malmöbo.	\\
+				Hampus Lynghed	&	Vän till brudgummen från universitetet. MFF och brädspel står högt upp på Hampus prioritetslista 	\\
+				Hanna Jonsson	&	Sambo med Henrik. Läkare som tältat med brudparet under Urkultfestivalen. Bor annars i Göteborg. 	\\
+				Hedvig Hedin	&	Brudens kära mor. Golfspelare och nybliven husägare i välkänt område.	\\
+				Helena Niwong	&	Kusin till bruden. Från början dalkulla men numera bosatt i Stockholm. Vandrar och cyklar gärna med familjen.	\\
+				Helena Sjöström	&	Vän till bruden från gymnasiet. Rest runt med bruden i Asien och flyttade samtidigt som bruden till Lund.	\\
+				Henrik Söderström	&	Vän till brudgummen från universitetet. Festerist ihop med brudgummen, byggde tillsammans en eldsprutande saucer. Sambo med Hanna.	\\
+				Ida Grandell	&	Sambo med Carl-David. Tävlar med hunden Njállu. Rider och är gärna i stugan i dalarna.	\\
+				Jacob Lidman	&	Sambo med Maria K. Doktorand boende i Stockholm med ett stort ölintresse. 	\\
+				Jeanette Bosund	&	Vän till bruden från universitetet och medlem i BP.  Hundälskande lantmätare bosatt i Lund. Gift med Karl B.	\\
+				Joel Säll	&	Vän till brudgummen från universitetet. Kombo med brudgummen under utlandsstudier i Prag. Projekterar runt huset i Knivsta. Sambo med Malin.	\\
+				Jonas Merkel	&	Brudgummens far. Nyfunnet MTB-intresse och tvåfaldig svensk klassiker-medaljör.	\\
+				Jonatan Hermansson	&	Vän till brudgummen från gymnasiet. Grillmästare som förespråkar mycket tändvätska och höga lågor. Till vardags pressekreterare i riksdagen. Sambo med Fia.	\\
+				Jörgen Möller	&	Gift med brudgummens faster Anna. Finurlig ingenjör med stort teknik och prylintresse. Har dragit brudgummens axel ur led.	\\
+				Kalle Bosund	&	Sambo med Jeanette och BP-fantast. Tränar gärna, bor i Lund med hund och barn.	\\
+				Katja Wigren	&	Barndomsvän till bruden. En hotta-brud som alltid hittar på tokigheter med bruden. Har bott i bland annat Italien, Kanada och nu Åre.	\\
+				Kjell Pollack	&	Gift med brudens faster Gunilla. Näst efter flintastek går kottar varmt på grillen i stugan på Vätö.	\\
+				Kristina Hedin	&	Brudens lillasyster. En fena på blommor, bin och avfall och har ännu inte slagit brudens tid på Göteborgsvarvet. Sambo med Alexander H.	\\
+				Lara Borges	&	Sambo Amir. Lärde känna brudgummen i Prag. Brudgummen har övernattat hemma hos Laras mor i Portugal.	\\
+				Lars Johannesson	&	Sambo till brudgummens kusin Maja. Hemflyttad från Uppsala till Lund. Inte rädd för att kleta ner sig i Tjurruset.	\\
+				Laura Betnér	&	Barndomsvän till brudenn. Berest språkvetare som inte är rädd att ta ton. Bryter fortfarande på småländska trots många år på schlätta och nu i Uppsala. Favoritfilm: Pearl Harbour. Sambo med Fredrik.	\\
+				Lennart Hedin	&	Brudens far. En förkärlek till golf, kaffe och mjölkchoklad. Stammis på biblioteket och har gett bruden sitt läsintresse.	\\
+				Linda Eriksen	&	Gift med Robert E. Boende utanför Mjölby och vars dotter har ärft sin mammas stora ridintresse.	\\
+				Louise Selga	&	Brudgummens kusin Stefans flickvän. Bakintresserad Lundabo som precis påbörjat en industridoktorandtjänst på SLU. 	\\
+				Magnus Merkel	&	Brudgummens farbror. Kör elcykel och äter gärna god mat. Är i sommarstugan i Loftamhammar så länge katten inte säger ifrån.	\\
+				Maja Möller	&	Kusin till brudgummen. Djur och naturälskare på både arbetet och fritiden. Matte till jaktlabradoren Aslan och nyligen hemflyttad till Skåne. Sambo med Lars.	\\
+				Malin Lindström	&	Sambo med Joel. Bosatt i Knivsta men hänger gärna i sommarstugan utanför Motala. Jobbar på Uppsala universitet men är nu föräldaledig.	\\
+				Malin Svebring	&	Vän till bruden från universitetet och medlem i BP. Lantemätare som jobbar med nya polishögskolan i Malmö. Bruden och Malin fann varandra med gemensamt scoutbakgrund. Gift med Gustav.	\\
+				Maria Busck	&	Sambo med Carl. Influencer bosatt i Malmö med rötter i Hälsingland. 	\\
+				Maria Karlsson	&	Barndomsvän med bruden och TM kvällen till ära. Stockholmsbo som gärna spenderar tid i sommarstugan utanför Söderköping. Orsaken till att familjen Hedin hade två telefonnummer.	\\
+				Marie Ericsson	&	Vän till bruden från universitetet och medlem i BP. Smålänning och lantmätare vars skratt smittar av sig. Äger stuga och skog men arealen kan vara svår att komma ihåg.	\\
+				Marie-Louise Merkel	&	Mor till brudgummen. Ses ofta på långa hundprommenader eller på någon sina många cyklar.  	\\
+				Matilda Arro	&	Sambo Erik B. Linköpingsbo som jobbar samtidigt som hon läser till läkare, resterande tid går till hästen. 	\\
+				Mattias Kardell	&	Barndomsvän till brudgummen. Lärde känna brudgummen via SS Allians. Flyttat tillbaka till schlätten efter flera år i Göteborg.	\\
+				Mikael Bergström	&	Kusin till bruden. Stockholmsbo men tidigare dalmas. Bygger på stugprojekt på sommaren och skjutsar till skidbackar på vintern. Gift med Anna-ida.	\\
+				Moa Chley Tegnelund	&	Vän till bruden från universitetet och medlem i BP. Lantmätare och stolt norrbottning boende i Malmö. Gillar beachvolleyboll och resor med rosabussarna.  	\\
+				Elisabet Ingmanson	&	Mormor till bruden. Hundälskare som numera är kattägare. Har köket tappeserat med teckningar från barnbarnen och dricker gärna kaffe.	\\
+				Ooy Ingmansson	&	Brudens morbror Pers fru. XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX	\\
+				Per Ingmansson	&	Brudens morbror. Har familjens rekord på marathon. Skogsägare som gärna jagar. 	\\
+				Per Wahlstedt	&	Sambo till brudgummens syster Rebecka. Stor frisbeenörd som då och då bulkar på gymmet. 	\\
+				Peter Levin	&	Vän till brudpatet. Lärde känna brudparet via Runaccedemy. Driven idrottslärare som är snabb i löpspåret.	\\
+				Rebecka Merkel	&	Brudgummens lillasyster. Frisbee-älskannde Lundabo som blåser fram på rullskidor i snöfattiga skåne. Vinner gärna över sin bror i brädspel.' Sambo med Per. 	\\
+				Renisa Kokoneshi	&	Sambo till Andree. Chicagotjej som numera bor i Tranås och studerar på Linköpings universitet.	\\
+				Richard Skogh	&	Sambo Emma T. Boende utanför Åtvidaberg.  XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX	\\
+				Robert Eriksen	&	Barndomsvän till brudgummen. Lärde känna brudgummen via SS Allians. Whiskyentusiast och har många gånger slagit brudgummen i TV-spel. Gift med Linda. 	\\
+				Robert Janson	&	Emmas storasysters sambo och nära vän till brudummen. Klätterapa och chiliodlare på vars 30-årsfest bruden och brudgummen träffades.	\\
+				Roger Alne	&	Sambo med Sanna. Norsk brandingenjör boende utanför Oslo och tvåbarnsfar.	\\
+				Roger Österback	&	Morbror till brudgummen. Linköpingsbo och snickare som gärna drar upp en gös eller två.	\\
+				Sanna Lowén	&	Vän till bruden från gymnasiet. Numera boende utanför Oslo som renovera hus och umgås med familjen på fritiden. Favvodryck på gymnasiet var nyponsoppa. Sambo med Roger A.	\\
+				Siv Karmbro	&	Mormor till brudgummen. Åker gärna på kryssningar med Björn och goda vänner.	\\
+				Stefan Möller	&	Kusin till brudgummen. Nyexaminerad Uppsala-psykolog och återigen Lunda-bo. Reser gärna och har varit i de flesta världsdelar. Tillsammans med Louise.	\\
+				Stefan Wass	&	Vän till brudgummen från gymnasiet och bestman kvällen till ära. Motorcykelförsäljare som sprungit in på 36:e plats på Göteborgsvarvet.	\\
+				Thomas Niwong	&	Gift med brudens kusin Helena. Dalmas, numera stockholmsbo. Syns inte i rutan men verkar i bakgrunden.	\\
+				Tobias Möller	&	Kusin till brudgummen. Boende i Lund, fotbollsspelare och stor MFF-supporter.	\\
+				Victoria Wahlbom Helström	&	Vän till brudparet. Ironmaniac med många cyklar som sprungit många långa ibland isiga löprundor med budparet. Sambo med Gustav Svanfeldt.	\\
+				Victor Ingemansson	&	Gift med Caroline och BP-stalker. Malmöbo men IFK-göteborgsupporter som besegrat Kullamannen dubbeldöden och sprungit marathon med brudparet.	\\
+				Wiktor Holstenson	&	Vän till brudgummen från gymnasiet. Norrköpingsbo och sportfiskare med båten ständigt på släp. Friterar goda pommes till efterfesten. 	\\
+		\end{longtable}
+	
+	\newpage
+	
+	\section{Sånger}
+	
+	\subsection{Jag har aldrig var't på snusen}
+		\textit{Melodi: O, hur saligt att få vandra} \\
+		
+		\noindent 
+		Jag har aldrig varit på snusen \\ 
+		aldrig rökat en cigarr, halleluja \\ 
+		Mina dygder äro tusen \\ 
+		inga syndiga laster jag har \\ 
+		Jag har aldrig sett nåt naket \\ 
+		inte ens ett nyfött barn, halleluja \\ 
+		Mina blickar går mot taket \\ 
+		därmed undgår jag frestarens garn \\ 
+		
+		\noindent
+		Halleluja, Halleluja… \\ 
+		
+		\noindent
+		Baccus spelar på gitarren \\ 
+		Satan spelar på sitt handklaver \\ 
+		alla djävlar dansar tango \\ 
+		säg, vad kan man väl önska sig mer? \\ 	
+		
+		\noindent
+		Jo att alla bäckar vore brännvin \\
+		Stångån full av bayerskt öl \\
+		konjak i varenda rännsten \\
+		och punch i varendaste pöl, \\
+	
+		\noindent
+		Halleluja, Halleluja…
+
+	\subsection{Siffervisan}
+		\textit{Melodi: Ritsch, ratsch} \\
+		
+		\noindent
+		1, 2, 75, 6, 7, 75, 6, 7, 75, 6, 7 \\
+		1, 2, 75, 6, 7, 75, 6, 7, 73 \\
+		107, 103, 102 \\
+		107, 6, 19, 27 \\
+		17, 18, 16, 15 \\
+		13, 19, 14, 17 \\
+		19, 16, 15, 11 \\
+		8, 47! \\
+		
+	\subsection{Bordeaux, Bordeaux}
+		\textit{Melodi: I sommarens soliga dagar} \\
+		
+		\noindent
+		Jag minns än idag hur min fader \\
+		kom hem ifrån staden så glader \\
+		och rada’ upp flaskor i rader \\
+		och sade nöjd som så: \\
+		”Bordeaux, Bordeaux!” \\
+		
+		\noindent 
+		Han drack ett glas, kom i extas, \\
+		och sedan blev det stort kalas. \\
+		Och vi små glin, ja vi drack vin \\
+		som första klassens fyllesvin. \\
+		Och vi dansade runt där på golvet \\
+		och skrek så vi blev blå:\\
+		”Bordeaux, Bordeaux!” \\
+		
+		\newpage
+		
+		
+\subsection{Lantmätarens testamente}
+\textit{Mellodi: She'll be coming down the mountin} \\
+
+\noindent
+:,: Du ska få min gamla fennel när jag dör :,: \\
+ty i pradisets lunder \\
+mäter man uppå sekunder. \\ 
+Du ska få min gamla fennel när jag dör. \\
+
+\noindent
+:,: Du ska få mitt vinkelprisma när jag dör :,:\\
+ty därnere i det heta \\
+äro alla vinklar reta. \\
+Du ska få mitt vinkelprisma när jag dör. \\
+
+\noindent
+:,: Du ska få min gamla Ljungström när jag dör :,: \\
+ty vid satans hemska låtar \\
+smälta alla mätbordsplåtar. \\
+Du ska få min gamla Ljungström när jag dör.\\ 
+
+\noindent
+:,: Du ska få mitt lod med snöre när jag dör :,: \\
+ty i paradisets hagar \\
+gälla inte Newtons lagar.\\
+Du ska få mitt lod med snöre när jag dör. \\
+
+\noindent
+:,: Du ska få min gamla VF när jag dör :,: \\
+ty därnere bland allt svavel \\
+fins det ändå nog med dravel. \\
+Du ska få min gamla VF när jag dör. \\
+
+\noindent
+:,: Du ska få mitt gamla mätband när jag dör :,: \\
+ty där uppe uti etern \\
+får det slå på kilometern \\
+Du ska få mitt gamla mätband när jag dör. \\
+
+\noindent
+:,: Du ska få min gamla lagbok när jag dör :,: \\
+ty i kalla, blöta kalken \\
+gäller inte jordabalken \\
+Du ska få min gamla lagbok när jag dör. \\
+
+\noindent
+:,: Du ska få mitt gamla banklån när jag dör :,: \\
+ty när Döden drar sin lie \\
+har jag långt till F29 \\
+Du ska få mitt gamla banklån när jag dör. \\
+
+\newpage
+
+
+\subsection{Mera brännvin i glasen}
+\textit{Melodi: Internationalen} \\
+
+\noindent
+Mera brännvin i glasen, \\
+mera glas på vårt bord, \\
+mera bord på kalasen, \\
+mera kalas på vår jord. \\
+ 
+\noindent
+Mera jordar kring månen, \\
+mera månar kring Mars, \\
+mera marscher till Skåne, \\
+mera Skåne, Gud bevars, bevars, bevars! \\
+
+\subsection{Feta Fransyskor}
+\textit{Melodi: Marche Militaire} \\
+
+\noindent
+Feta fransyskor som svettas om fötterna, \\
+de trampar druvor som sedan ska jäsas till vin. \\
+Transpirationen viktig é, ty den ge’ fin bouquet. \\
+Vårtor och svampar följer me’ men vad gör väl de’? \\
+
+\noindent
+För… vi vill ha vin, vill ha vin, vill ha mera vin, \\
+även om följderna blir att vi få lida pin. \\
+Töser: Flaskan och glaset gått i sin. \\
+Pågar: Hit med vin, mera vin! \\
+Töser: Tror ni att vi är fyllesvin? \\
+Pågar: JA! (fast större) \\
+
+\newpage
+\subsection{Spritbolaget}
+
+\textit{Melodi: Du käre lille snickerbo’} \\
+
+\noindent
+Till spritbolaget ränner jag \\
+och bankar på dess port. \\
+Jag vill ha nå’t som bränner bra \\
+och gör mig sketfull fort. \\
+Expediten sade: ”Godda’, \\
+hur gammal kan min herre va’? \\
+Har du nå’t leg, ditt fula drägg? \\
+Kom hit igen när du fått skägg!” \\
+
+\noindent
+Nej, detta var ju inte bra, \\
+jag ska bli full ikväll. \\
+Då plötsligt en idé fick jag: \\
+De har ju sprit på Shell! \\
+Många flaskor stod där på rad, \\
+så nu kan jag bli full och glad. \\
+Den röda drycken åkte ner… \\
+Nu kan jag inte se nå’t mer	\\
+	
+\subsection{Strejk på pripps}
+\textit{Melodi: I natt jag drömde}\\
+
+\noindent
+I natt jag drömde något som,\\
+jag aldrig drömt förut.\\ 
+Jag drömde det var strejk på Pripps\\
+och alla ölen var slut.\\
+Jag drömde om en jättesal\\
+där ölen stod på rad.\\
+Jag drack så där ett tjugotal\\
+och reste mig och sa;\\
+
+\noindent
+Armen i vinkel\\
+blicken i skyn\\
+så var det menat\\
+whisky och renat\\
+vårt mål alkohol!\\
+För dem som tål! - SKÅL\\
+\newpage	
+\end{document}
