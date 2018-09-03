@@ -17,6 +17,7 @@
 \usepackage{array}
 \usepackage{lipsum}
 \usepackage{tikz}
+\usepackage{setspace}
 
 
 %\renewcommand{\thesection}{}
@@ -57,46 +58,80 @@
 	\pagestyle{fancy}
 	\lhead{}\chead{}\rhead{}
 	\cfoot{\vspace*{-2\baselineskip}\thepage}
-	
-		
+	\renewcommand{\headrulewidth}{0pt}
 	\section{Välkomna}
 	\newpage
 	
 	\tableofcontents
 	\newpage
 	
+	\section{Meny}
+	\begin{spacing}{1.3}
+		\subsection*{Snittar}
+		\textit{Västerbottenssnitt med gräslökskräm och rödbetsskott \\
+		Polenta med sötpotatis och bönor \\
+		Hush puppies med ärtor och chilli \\}
+	\end{spacing}	
 	
-	\thispagestyle{empty}
+	\subsection*{Huvudrätt}
+	\begin{spacing}{1.3}
+		\textit{Amerikansk ek- och hickoryrökig Oxbringa eller högrev \\ 
+		Cajunkryddad och sotat norsk fjordlax med aska och frön \\
+		Getost med betor, picklade steklökar samt getostdressing. \\
+		Krispig sötpotatis med gräslöksdressing och granatäpple \\
+		Roman- och frisésallad, med rostade valnötter, caesardressing och vitlökskrutonger \\
+		Rostade morötter saltbakad rotselleri och solrosfrön \\
+		Rökta tomater i nötter, honung och puffat vete \\
+		Rostad blomkål med tryffeljord  \\
+		Surdegsbröd \\
+		Örtsmör} \\
+	\end{spacing}	
+	
+		\subsection*{Fördessert}
+		\textit{Citronbavaroise med dillpulver och smetanasorbet}
+		
+		\subsection*{Tårta}
+		\begin{spacing}{1.3}
+		\textit{Chokladmousse fylld med körsbär- och vaniljpannacotta, dekorerad med chokladflarn, vaniljmaränger och jordgubbsmakroner}
+		\end{spacing}
+	
+	\newpage
+	\section{Dryck}
+	\newpage
+
 	\restoregeometry % restores the geometry
 	
 	\begin{landscape}
 	\addcontentsline{toc}{section}{Bordsplacering}
-		
+	\thispagestyle{empty}	
 	\begin{tikzpicture}[remember picture, overlay]
 	
-	\node[inner sep=0pt] (borsplacering) at (7.6, -4.2) {\includegraphics[width=1.35\paperwidth]{Bordsplacering.jpg}} ;
+	\node[inner sep=0pt] (borsplacering) at (7.6, -4.2) {\includegraphics[width=1.4\paperwidth]{Bordsplacering.jpg}} ;
 	
-	\node[] (Bord 1) at (0.5,-0.8) {\circled{1}};
-	\node[] (Bord 2) at (3,-0.8) {\circled{2}};
-	\node[text=purple] at (7.6,-0.90) {Honnörsbordet};
-	\node[] (Bord 3) at (11.5,-0.8) {\circled{3}};
-	\node[] (Bord 4) at (13.7,-0.8) {\circled{4}};
+	\node[] (Bord 1) at (-0.8,-0.6) {\large \circled{1}};
+	\node[] (Bord 2) at (2.2,-0.6) {\large \circled{2}};
+	\node[text=purple] at (7.7,-0.50) {\large Honnörsbordet};
+	\node[] (Bord 3) at (12.2,-0.6) {\large \circled{3}};
+	\node[] (Bord 4) at (14.6,-0.6) {\large \circled{4}};
 	% Rad 2		
-	\node[] (Bord 5) at (0.5,-4.1) {\circled{5}};
-	\node[] (Bord 6) at (3.1,-4.1) {\circled{6}};
-	\node[] (Bord 7) at (10,-4.1) {\circled{7}};
-	\node[] (Bord 8) at (12.5,-4.1) {\circled{8}};
-	\node[] (Bord 9) at (15,-4.1) {\circled{9}};
+	\node[] (Bord 5) at (-0.5,-4.1) {\large \circled{5}};
+	\node[] (Bord 6) at (2.4,-4.1) {\large \circled{6}};
+	\node[] (Bord 7) at (10.3,-4.1) {\large \circled{7}};
+	\node[] (Bord 8) at (13.3,-4.1) {\large \circled{8}};
+	\node[] (Bord 9) at (15.9,-4.1) {\large \circled{9}};
 	% Rad 3
-	\node[] (Bord 10) at (0.5,-7.4) {\circled{10}};
-	\node[] (Bord 11) at (3,-7.4) {\circled{11}};
-	\node[] (Bord 12) at (12.4,-7.4) {\circled{12}};
-	\node[] (Bord 13) at (14.8,-7.4) {\circled{13}};
+	\node[] (Bord 10) at (-0.3,-7.6) {\large \circled{10}};
+	\node[] (Bord 11) at (2.3,-7.6) {\large \circled{11}};
+	\node[] (Bord 12) at (12.7,-7.6) {\large \circled{12}};
+	\node[] (Bord 13) at (15.6,-7.6) {\large \circled{13}};
 	
 	\node[] (Page no) at (7.8,-11.5) {\thepage};
 	\end{tikzpicture}
 	\end{landscape}
 	
+	
+	\begingroup
+	\fontsize{10pt}{10.3pt}\selectfont
 	
 	\newgeometry{left=0.3cm,bottom=0cm,top=0.3cm,right=0.3cm}
 	\begin{landscape}
@@ -148,16 +183,16 @@
 			Katja Wigren	&	Gustav Svebring			\\
 			Carl-David Ekblom	&	Emma Thorstenson	\\ 
 			Anna Möller	&	Daniel Svärd				\\ 
+			\\
+			\multicolumn{2}{c}{\textbf{Bord 7}} 				\\ \hline
+			Anna Joelsson	&	Björn Andersson	\\
+			Axel Merkel		&	Maria Karlsson	\\ 
+			Erika Holmer	&	Gustav Svanfeldt	\\ 
+			
 			
 		\end{tabular}
 		\quad \hspace*{2cm}
 		\begin{tabular}{  l  l }
-				\multicolumn{2}{c}{\textbf{Bord 7}} 				\\ \hline
-				Anna Joelsson	&	Björn Andersson	\\
-				Axel Merkel		&	Maria Karlsson	\\ 
-				Erika Holmer	&	Gustav Svanfeldt	\\ 
-				&										\\ 
-				
 				\multicolumn{2}{c}{\textbf{Bord 8}} 				\\ \hline
 				Matilda Arro	&	Wiktor Holstenson	\\
 				Mattias Kardell	&	Lars Johannesson	\\ 
@@ -186,23 +221,19 @@
 				Malin Lindström	&	Andree Krantz Rosenquist	\\
 				Kjell Pollack	&	Fia Storkull	\\ 
 				Anna Merkel Möller	&	Amir Mothagi	\\ 		
+				& \\ 
+				\multicolumn{2}{c}{\textbf{Bord 13}} 				\\ \hline
+				Renisa Kokoneshi	&	Hampus Lynghed	\\
+				Jonatan Hermansson	&	Lara Borges	\\ 
+				Ooy Ingmansson	&	Roger Österback	\\ 
+				&									\\ \\ \\ \\ \\
+				 
 		\end{tabular}
 	\end{center}
 	\newpage
-	
-	\begin{tikzpicture}[remember picture, overlay]
-	\node[] (Page no) at (10,-13.8) {\thepage};		
-	\end{tikzpicture}
-	
-		\begin{tabular}{  l  l }
-			\multicolumn{2}{c}{\textbf{Bord 13}} 				\\ \hline
-			Renisa Kokoneshi	&	Hampus Lynghed	\\
-			Jonatan Hermansson	&	Lara Borges	\\ 
-			Ooy Ingmansson	&	Roger Österback	\\ 
-			&										\\ 
-		\end{tabular}
-		
+
 	\end{landscape}
+	\endgroup
 	
 	\restoregeometry
 	\newpage
@@ -290,13 +321,13 @@
 				Mikael Bergström	&	Kusin till bruden. Stockholmsbo men tidigare dalmas. Bygger på stugprojekt på sommaren och skjutsar till skidbackar på vintern. Gift med Anna-ida.	\\
 				Moa Chley Tegnelund	&	Vän till bruden från universitetet och medlem i BP. Lantmätare och stolt norrbottning boende i Malmö. Gillar beachvolleyboll och resor med rosabussarna.  	\\
 				Elisabet Ingmanson	&	Mormor till bruden. Hundälskare som numera är kattägare. Har köket tappeserat med teckningar från barnbarnen och dricker gärna kaffe.	\\
-				Ooy Ingmansson	&	Brudens morbror Pers fru. XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX	\\
+				Ooy Ingmansson	&	Brudens morbror Pers fru. \textbf{XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX}	\\
 				Per Ingmansson	&	Brudens morbror. Har familjens rekord på marathon. Skogsägare som gärna jagar. 	\\
 				Per Wahlstedt	&	Sambo till brudgummens syster Rebecka. Stor frisbeenörd som då och då bulkar på gymmet. 	\\
 				Peter Levin	&	Vän till brudpatet. Lärde känna brudparet via Runaccedemy. Driven idrottslärare som är snabb i löpspåret.	\\
 				Rebecka Merkel	&	Brudgummens lillasyster. Frisbee-älskannde Lundabo som blåser fram på rullskidor i snöfattiga skåne. Vinner gärna över sin bror i brädspel.' Sambo med Per. 	\\
 				Renisa Kokoneshi	&	Sambo till Andree. Chicagotjej som numera bor i Tranås och studerar på Linköpings universitet.	\\
-				Richard Skogh	&	Sambo Emma T. Boende utanför Åtvidaberg.  XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX	\\
+				Richard Skogh	&	Sambo Emma T. Boende utanför Åtvidaberg.  \textbf{XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX}	\\
 				Robert Eriksen	&	Barndomsvän till brudgummen. Lärde känna brudgummen via SS Allians. Whiskyentusiast och har många gånger slagit brudgummen i TV-spel. Gift med Linda. 	\\
 				Robert Janson	&	Emmas storasysters sambo och nära vän till brudummen. Klätterapa och chiliodlare på vars 30-årsfest bruden och brudgummen träffades.	\\
 				Roger Alne	&	Sambo med Sanna. Norsk brandingenjör boende utanför Oslo och tvåbarnsfar.	\\
@@ -311,6 +342,12 @@
 				Victor Ingemansson	&	Gift med Caroline och BP-stalker. Malmöbo men IFK-göteborgsupporter som besegrat Kullamannen dubbeldöden och sprungit marathon med brudparet.	\\
 				Wiktor Holstenson	&	Vän till brudgummen från gymnasiet. Norrköpingsbo och sportfiskare med båten ständigt på släp. Friterar goda pommes till efterfesten. 	\\
 		\end{longtable}
+	
+	\newpage
+	
+	\section{Fun facts}
+	
+	\subsection{Vad i bövelen är BP för någonting?}
 	
 	\newpage
 	
@@ -378,7 +415,24 @@
 		Och vi dansade runt där på golvet \\
 		och skrek så vi blev blå:\\
 		”Bordeaux, Bordeaux!” \\
+
+		\subsection{Feta Fransyskor}
+		\textit{Melodi: Marche Militaire} \\
 		
+		\noindent
+		Feta fransyskor som svettas om fötterna, \\
+		de trampar druvor som sedan ska jäsas till vin. \\
+		Transpirationen viktig é, ty den ge’ fin bouquet. \\
+		Vårtor och svampar följer me’ men vad gör väl de’? \\
+		
+		\noindent
+		För… vi vill ha vin, vill ha vin, vill ha mera vin, \\
+		även om följderna blir att vi få lida pin. \\
+		Töser: Flaskan och glaset gått i sin. \\
+		Pågar: Hit med vin, mera vin! \\
+		Töser: Tror ni att vi är fyllesvin? \\
+		Pågar: JA! (fast större) \\
+				
 		\newpage
 		
 		
@@ -386,34 +440,12 @@
 \textit{Mellodi: She'll be coming down the mountin} \\
 
 \noindent
-:,: Du ska få min gamla fennel när jag dör :,: \\
-ty i pradisets lunder \\
-mäter man uppå sekunder. \\ 
-Du ska få min gamla fennel när jag dör. \\
-
-\noindent
-:,: Du ska få mitt vinkelprisma när jag dör :,:\\
-ty därnere i det heta \\
-äro alla vinklar reta. \\
-Du ska få mitt vinkelprisma när jag dör. \\
-
-\noindent
-:,: Du ska få min gamla Ljungström när jag dör :,: \\
-ty vid satans hemska låtar \\
-smälta alla mätbordsplåtar. \\
-Du ska få min gamla Ljungström när jag dör.\\ 
 
 \noindent
 :,: Du ska få mitt lod med snöre när jag dör :,: \\
 ty i paradisets hagar \\
 gälla inte Newtons lagar.\\
 Du ska få mitt lod med snöre när jag dör. \\
-
-\noindent
-:,: Du ska få min gamla VF när jag dör :,: \\
-ty därnere bland allt svavel \\
-fins det ändå nog med dravel. \\
-Du ska få min gamla VF när jag dör. \\
 
 \noindent
 :,: Du ska få mitt gamla mätband när jag dör :,: \\
@@ -427,13 +459,39 @@ ty i kalla, blöta kalken \\
 gäller inte jordabalken \\
 Du ska få min gamla lagbok när jag dör. \\
 
-\noindent
-:,: Du ska få mitt gamla banklån när jag dör :,: \\
-ty när Döden drar sin lie \\
-har jag långt till F29 \\
-Du ska få mitt gamla banklån när jag dör. \\
-
 \newpage
+
+\subsection{Finland}
+\textit{Melodi: Högt över havet} \\
+
+\noindent 
+Finland är Finland och Finland är bra. \\
+Dom har en pipeline med sprit från Moskva. \\
+Bada Bastu, piska med ris, \\
+hacka hål i is. \\
+
+\noindent 
+Danmark är Danmark och Danmark är bra. \\
+Dom har en jungfru som sitter så bar. \\
+Röde pölsor med Tuborg och lök, \\
+vi köpte billig krök \\
+
+\noindent 
+Norge är Norge och Norge är bra. \\
+Dom har den olja som vi vill ha. \\
+Dyrt i baren ett jävla pris, \\
+klubba säl med is. \\
+
+\noindent 
+Island är Island och Island är bra. \\
+Kriser, vulkaner och hästar dom har. \\
+Jag fiser i geisern vad var det jag sa, valspeck varje dag. \\
+
+\noindent 
+Sverige är Sverige och Sverige är bäst. \\
+Ingvar Kamprad han tjänar mest. \\
+Ullared, Abba och Absolut, \\
+Nu är visan slut. \\
 
 
 \subsection{Mera brännvin i glasen}
@@ -451,22 +509,6 @@ mera månar kring Mars, \\
 mera marscher till Skåne, \\
 mera Skåne, Gud bevars, bevars, bevars! \\
 
-\subsection{Feta Fransyskor}
-\textit{Melodi: Marche Militaire} \\
-
-\noindent
-Feta fransyskor som svettas om fötterna, \\
-de trampar druvor som sedan ska jäsas till vin. \\
-Transpirationen viktig é, ty den ge’ fin bouquet. \\
-Vårtor och svampar följer me’ men vad gör väl de’? \\
-
-\noindent
-För… vi vill ha vin, vill ha vin, vill ha mera vin, \\
-även om följderna blir att vi få lida pin. \\
-Töser: Flaskan och glaset gått i sin. \\
-Pågar: Hit med vin, mera vin! \\
-Töser: Tror ni att vi är fyllesvin? \\
-Pågar: JA! (fast större) \\
 
 \newpage
 \subsection{Spritbolaget}
@@ -513,5 +555,17 @@ så var det menat\\
 whisky och renat\\
 vårt mål alkohol!\\
 För dem som tål! - SKÅL\\
-\newpage	
+\newpage
+
+
+\section{Svar tipspromenad}
+
+
+\newpage
+
+\section{Tack}
+Stort tack till alla er som hjälpt oss förgylla vår dag!
+
+
+
 \end{document}
