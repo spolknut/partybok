@@ -1,0 +1,175 @@
+% !TeX program = lualatex
+\documentclass[a5paper]{article}
+\usepackage[body={10cm,17cm}]{geometry}
+\usepackage[a5,center,off]{crop}
+
+\usepackage{blindtext}
+\usepackage{tikz}
+\usetikzlibrary{calc}
+\usepackage[utf8]{inputenc}
+\usepackage{multicol}
+\usepackage{pdflscape}
+\usepackage{longtable}
+\usepackage{xcolor}
+\setlength{\columnsep}{2cm}
+\usepackage{fancyhdr}
+\usepackage{everypage}
+\usepackage{lipsum}
+\usepackage{array}
+\usepackage{lipsum}
+\usepackage{tikz}
+\usetikzlibrary{fit,shapes.geometric}
+\usepackage{setspace}
+\usepackage{adjustbox}
+\usepackage{fontspec}
+\usepackage{titlesec}
+\usepackage{titling}
+\usepackage{rotating}
+
+\newfontfamily\headingfont[]{parisienne}
+\titleformat*{\section}{\Huge\headingfont}
+\titleformat*{\subsection}{\LARGE\headingfont}
+\titleformat*{\subsubsection}{\large\headingfont}
+
+
+%\renewcommand{\thesection}{}
+%\renewcommand{\thesubsection}{}
+\setcounter{secnumdepth}{0}
+\renewcommand{\contentsname}{Innehållsförteckning}
+
+\newcommand*\circled[1]{\tikz[baseline=(char.base)]{
+		\node[shape=circle,draw,inner sep=2pt, color=red] (char) {#1};}}
+
+\newcounter{nodemarkers}
+\newcommand\circletext[1]{%
+	\tikz[overlay,remember picture] 
+	\node (marker-\arabic{nodemarkers}-a) at (0,1.5ex) {};%
+	#1%
+	\tikz[overlay,remember picture]
+	\node (marker-\arabic{nodemarkers}-b) at (0,0){};%
+	\tikz[overlay,remember picture,inner sep=2pt]
+	\node[draw,ellipse,color=red, thick,fit=(marker-\arabic{nodemarkers}-a.center) (marker-\arabic{nodemarkers}-b.center)] {};%
+	\stepcounter{nodemarkers}%
+}
+
+\newcolumntype{N}{>{\raggedright\arraybackslash}p{3cm}}
+\newcolumntype{L}{>{\raggedright\arraybackslash}p{8cm}}
+\newcolumntype{Q}{>{\raggedright\arraybackslash}p{4cm}}
+\newcolumntype{T}{>{\raggedright\arraybackslash}p{2.1cm}}
+
+\newcommand{\defpage}{\newgeometry{left=1.2cm,bottom=1.2cm,top=1.2cm,right=1cm}}
+
+
+\begin{document}
+
+	\thispagestyle{empty}
+
+	\begingroup
+	\fontsize{10pt}{10.3pt}\selectfont
+	\pagenumbering{gobble}
+
+	\newgeometry{left=0.3cm,bottom=0cm,top=0.3cm,right=0.3cm}
+	\begin{landscape}
+		\begin{tikzpicture}[remember picture, overlay]
+		\node[] (Page no) at (10,-13.8) {\thepage};		
+		\end{tikzpicture}
+		\begin{center}
+			
+			\begin{tabular}{  l l l l l l}	
+				\multicolumn{6}{c}{\textbf{Honnörsbordet}} 				\\ \hline
+				Lennart Hedin	&	Laura Betnér	&	Johnny Merkel	&	Emma Merkel	&	Robert Janson	&	Hedvig Hedin    \\ 
+				Marie-Louise Merkel	&	Joel Säll	&	Kristina Hedin	&	Stefan Wass	&	Caroline Assarsson	&	Jonas Merkel \\ \hline
+			\end{tabular}										\\
+		\end{center}
+		
+		
+		\begin{center}
+			\begin{tabular}{  l  l } 
+				\multicolumn{2}{c}{\textbf{Bord 1}}     \\ \hline
+				Gunilla Hedin      & Elisabet Ingmanson \\ 
+				Jörgen Möller      & Per Ingmansson   	\\ 
+				Anna-Ida Bergström & Birgitta Merkel    \\ 
+				&										\\ 
+				
+				\multicolumn{2}{c}{\textbf{Bord 2}} 	\\ \hline
+				Rebecka Merkel	&	Fredrik Valdeson	\\
+				Peter Levin	&	Helena Sjöström			\\ 
+				Camille Andersson	&	Richard Skogh	\\ 
+				&		\\ 
+				\multicolumn{2}{c}{\textbf{Bord 3}} \\ \hline
+				Gabriella Hedin	&	Alex Hansen		\\
+				Stefan Möller	&	Elin Nilsson	\\ 
+				Louise Selga	&	Thomas Niwong	\\  
+				&									\\ 
+				
+				\multicolumn{2}{c}{\textbf{Bord 4}} \\ \hline
+				Björn Karmbro	&	Siv Karmbro		\\
+				Helena Niwong	&	Carl Wiklund	\\ 
+				Maria Busck	&	Per Wahlstedt		\\ 
+				&									\\ 
+				
+				\multicolumn{2}{c}{\textbf{Bord 5}} 				\\ \hline
+				Viktor Ingemansson	&	Victoria Wahlbom Helström	\\
+				Moa Chley Tegnelund	&	Erik Bratsröm				\\ 
+				Jacob Lidman	&	Anna Våhlin						\\ 
+				& \\  
+				
+				\multicolumn{2}{c}{\textbf{Bord 6}} 		\\ \hline
+				Katja Wigren	&	Gustav Svebring			\\
+				Carl-David Ekblom	&	Emma Thorstenson	\\ 
+				Anna Möller	&	Daniel Svärd				\\ 
+				\\
+				\multicolumn{2}{c}{\textbf{Bord 7}} 				\\ \hline
+				Anna Joelsson	&	Björn Andersson	\\
+				Axel Merkel		&	Maria Karlsson	\\ 
+				Erika Holmer	&	Gustav Svanfeldt	\\ 
+				
+				
+			\end{tabular}
+			\quad \hspace*{2cm}
+			\begin{tabular}{  l  l }
+				\multicolumn{2}{c}{\textbf{Bord 8}} 				\\ \hline
+				Matilda Arro	&	Wiktor Holstenson	\\
+				Mattias Kardell	&	Lars Johannesson	\\ 
+				Ida Grandell	&	Annabel Merkel	\\ 
+				&										\\ 
+				
+				\multicolumn{2}{c}{\textbf{Bord 9}} 				\\ \hline
+				Roger Alne	&	Annika Andersson	\\
+				Marie Ericsson	&	Mikael Bergström	\\ 
+				Alexander Vidar	&	Sanna Lowén	\\
+				&										\\ 
+				
+				\multicolumn{2}{c}{\textbf{Bord 10}} 				\\ \hline
+				Ellen Lynghed	&	Tobias Möller	\\
+				Malin Svebring	&	Maja Möller	\\ 
+				Magnus Merkel	&	Erik Persson	\\ 
+				&										\\ 
+				
+				\multicolumn{2}{c}{\textbf{Bord 11}} 				\\ \hline
+				Jeanette Bosund	&	Hanna Jonsson	\\
+				Robert Eriksen	&	Linda Eriksen	\\ 
+				Kalle Bosund	&	Henrik Söderström	\\ 
+				&										\\ 
+				
+				\multicolumn{2}{c}{\textbf{Bord 12}} 				\\ \hline
+				Malin Lindström	&	Andree Krantz Rosenquist	\\
+				Kjell Pollack	&	Fia Storkull	\\ 
+				Anna Merkel Möller	&	Amir Mothagi	\\ 		
+				& \\ 
+				\multicolumn{2}{c}{\textbf{Bord 13}} 				\\ \hline
+				Renisa Kokoneshi	&	Hampus Lynghed	\\
+				Jonatan Hermansson	&	Lara Borges	\\ 
+				Ooy Ingmansson	&	Roger Österback	\\ 
+				&									\\ \\ \\ \\ \\
+				
+			\end{tabular}
+		\end{center}
+		\newpage
+		
+	\end{landscape}
+	\endgroup
+	
+	
+	
+\end{document}
