@@ -1,0 +1,130 @@
+% !TeX program = lualatex
+\documentclass[a4paper]{article}
+
+\usepackage{tikz}
+\usetikzlibrary{calc}
+\usepackage[utf8]{inputenc}
+\usepackage{multicol}
+\usepackage{pdflscape}
+\usepackage{longtable}
+\usepackage{xcolor}
+\setlength{\columnsep}{2cm}
+\usepackage{fancyhdr}
+\usepackage{everypage}
+\usepackage{lipsum}
+\usepackage{array}
+\usepackage{lipsum}
+\usepackage{tikz}
+
+\usepackage{setspace}
+\usepackage{adjustbox}
+\usepackage{fontspec}
+\usepackage{titlesec}
+\usepackage{titling}
+\usepackage{rotating}
+\usepackage{pdfpages}
+\newfontfamily\headingfont[]{parisienne}
+\titleformat*{\section}{\Huge\headingfont}
+\titleformat*{\subsection}{\LARGE\headingfont}
+\titleformat*{\subsubsection}{\large\headingfont}
+
+
+\newcommand\YUGE{\fontsize{80}{100}\selectfont}
+ 
+\newcounter{qcnt}
+
+\newcommand\qtitle[4]{
+	\addtocounter{qcnt}{1}
+	\vspace*{0.5cm} 
+	\begin{center} 
+		\fontspec{parisienne} 
+		\YUGE Fråga \the\numexpr\value{qcnt}	 
+	\end{center}
+	\vspace*{2cm}
+	\Huge #1		
+	\vspace*{2cm}
+	
+	\LARGE
+	\noindent
+	\textit{1)} \quad #2
+	\\ \\
+	\textit{X)} \quad #3
+	\\ \\
+	\textit{2)} \quad #4
+	\newpage
+}
+
+\begin{document}
+\pagenumbering{gobble}
+		
+\qtitle
+{När träffades Johnny och Emma första gången?}
+{På en konsert med Winnerbäck	}
+{En studentfest hos Gabbi}
+{På Roberts 30årsfest	}
+
+\qtitle
+{Vilken var brudparets första utlandsresa tillsammans?}
+{Rom}{Köpenhamn}{Amsterdam}
+
+\qtitle
+{Vems idé var det att springa marathon?}
+{Emmas}  
+{Alexander Hansens} 
+{Johnnys}	
+
+
+\qtitle
+{Hur många marathonlopp har brudparet sprungit sammanlagt?}	
+{4} {5} {7}
+
+
+\qtitle
+{Hur länge har brudparet bort ihop}	
+{3år}
+{4år} 
+{5år}	
+
+\qtitle
+{Emmas tjejgäng från Lund kallas för BP. Vad står egentligen BP för?}
+{Blodpudding}
+{Bara Pattar}
+{Bandypunk}
+
+\qtitle
+{Vad bjöd Johnny på första daten?}
+{Tacopaj} 
+{Hamburgare}
+{Våffelmackor}
+
+\qtitle
+{Johnny kan många programmeringsspråk, men vilket kan Emma?}
+{Matlab}	
+{C++}
+{Java}
+
+\qtitle
+{Vem bodde Johnny inte med i Prag?}
+{Joel}
+{Carl-David}
+{Amir}	
+
+\qtitle
+{Vilken var Johnny och Emmas första bil?}
+{Saab 9-3}	
+{Kia Soul}	
+{Volvo V40}
+
+\qtitle
+{Hur många brädspel, exklusive expansioner, har brudparet?}
+{22}
+{25}
+{27}
+
+\qtitle
+{Hur många tältnätter har Emma och Johnny gjort ihop?}	
+{16}		
+{19}
+{21}
+
+\end{document}
