@@ -1,0 +1,102 @@
+% !TeX program = lualatex
+\documentclass[a4paper]{article}
+\usepackage[margin=0pt]{geometry}
+
+\usepackage[utf8]{inputenc}
+\usepackage{multicol}
+\usepackage{pdflscape}
+\usepackage{longtable}
+\usepackage{xcolor}
+\setlength{\columnsep}{2cm}
+\usepackage{fancyhdr}
+\usepackage{everypage}
+\usepackage{lipsum}
+\usepackage{array}
+\usepackage{lipsum}
+\usepackage{tikz}
+\usetikzlibrary{fit,shapes.geometric}
+\usepackage{setspace}
+\usepackage{adjustbox}
+\usepackage{fontspec}
+\usepackage{titlesec}
+\usepackage{titling}
+\usepackage{rotating}
+\usepackage{arydshln}
+\usepackage{pdfpages}
+\newfontfamily\headingfont[]{parisienne}
+
+%\setmainfont[SizeFeatures={Size=52}]{parisienne}
+\setmainfont{parisienne}
+\setmonofont[SizeFeatures={Size=20}]{parisienne}
+\newcolumntype{x}{>{\centering\arraybackslash\hspace{0pt}}p{9cm}}
+\newcolumntype{M}{>{\centering\arraybackslash}m{9.4cm}}
+\newcolumntype{N}{@{}m{0pt}@{}}
+\newcommand\erow{\erownoline\hdashline[0.15cm/1cm]}
+\newcommand\erownoline{&\\[3.76cm]}
+
+
+\newcommand\y{\fontsize{44}{56}\selectfont}
+\newcommand\Y{\fontsize{52}{62}\selectfont}
+
+\newcommand\nametable[1]
+{
+\begin{landscape}
+	\begin{center}
+		\begin{tabular}{ M ;{0.1cm/1.8cm} M ;{0.1cm/1.8cm} M  N }
+			#1
+		\end{tabular}
+	\end{center}
+\end{landscape}
+
+}
+\begin{document}
+
+\nametable{						
+	\y	Alexander H	& \Y	Gabriella	& \Y	Malin L	\erow
+	\y	Alexander V	& \Y	Gunilla	& \Y	Malin S	\erow
+	\Y	Amir	& \y	G. Svanfeldt	& \Y	Maria B	\erow
+	\Y	Andree	& \y	G. Svebring	& \Y	Maria K	\erow
+	\Y	Anna J	& \Y	Hampus	& \Y	Marie	\erownoline
+}						
+
+\nametable{						
+	\y	Anna Merkel	& \Y	Hanna	& \y	Marie-Louise	\erow
+	\y	Anna Möller	& \Y	Hedvig	& \Y	Matilda	\erow
+	\Y	Anna V	& \Y	Helena N	& \Y	Mattias	\erow
+	\Y	Anna-Ida	& \Y	Helena S	& \Y	Mikael	\erow
+	\Y	Annabel	& \Y	Henrik	& \Y	Moa	\erownoline
+}						
+
+\nametable{						
+	\Y	Annika	& \Y	Ida	& \Y	Ooy 	\erow
+	\Y	Axel	& \Y	Jacob	& \Y	Per I	\erow
+	\Y	Birgitta	& \Y	Jeanette	& \Y	Per W	\erow
+	\Y	Björn A	& \Y	Joel 	& \Y	Peter 	\erow
+	\Y	Björn K	& \Y	Johnny 	& \Y	Rebecka 	\erownoline
+}						
+
+\nametable{						
+	\Y	Camille	& \Y	Jonas	& \Y	Renisa	\erow
+	\Y	Carl	& \Y	Jonatan	& \Y	Rickard	\erow
+	\Y	Carl-David	& \Y	Jörgen	& \Y	Robert E	\erow
+	\Y	Caroline	& \Y	Karl	& \Y	Robert J	\erow
+	\Y	Daniel	& \Y	Katja	& \Y	Roger A	\erownoline
+}						
+
+\nametable{						
+	\Y	Elin	& \Y	Kjell	& \Y	Roger Ö	\erow
+	\Y	Elisabet	& \Y	Kristina	& \Y	Sanna	\erow
+	\Y	Ellen	& \Y	Lara	& \Y	Siv	\erow
+	\Y	Emma	& \Y	Lars	& \Y	Stefan M	\erow
+	\Y	Emma T	& \Y	Laura	& \Y	Stefan W	\erownoline
+}						
+
+\nametable{						
+	\Y	Erik B	& \Y	Lennart	& \Y	Thomas	\erow
+	\Y	Erik P	& \Y	Linda	& \Y	Tobias	\erow
+	\Y	Erika	& \Y	Louise	& \Y	Victor	\erow
+	\Y	Fia	& \Y	Magnus	& \Y	Victoria	\erow
+	\Y	Fredrik	& \Y	Maja	& \Y	Wiktor	\erownoline
+}											
+
+\end{document}
