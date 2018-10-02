@@ -1,7 +1,7 @@
 % !TeX program = lualatex
 \documentclass[a5paper, 12pt]{article}
-\usepackage[body={10cm,17cm}]{geometry}
-\usepackage[a5,center,off]{crop}
+%\usepackage[a5,center,off, layoutvoffset=3mm,layouthoffset=3mm]{crop}
+\usepackage[layout=a5paper,layoutvoffset=0mm,layouthoffset=0mm,showframe=false,showcrop=false]{geometry}
 
 \usepackage{blindtext}
 \usepackage{tikz}
@@ -28,35 +28,53 @@
 \usepackage{pdfpages}
 \newfontfamily\headingfont[]{parisienne}
 \usepackage{titlesec}
-
 \titleformat{\section}[block]{\Large\bfseries\filcenter}{}{1em}{}
 \newcommand\YUGE{\fontsize{48}{60}\selectfont}
+\usepackage{afterpage}
 
+\newcommand\blankpage{%
+	\null
+	\thispagestyle{empty}%
+	\addtocounter{page}{-1}%
+	\newpage}
 
 \begin{document}
 \pagenumbering{gobble}	
  \cleardoublepage
- 
-	\begin{titlepage}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 		
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+	\begin{titlepage}
+		\pagestyle{empty}
+		\newgeometry{top=1cm, left=2cm,bottom=0.1cm}
 		\noindent
-		%\includegraphics[width=2cm]{logo.jpg}\\[-1em]
-		\par
-		\noindent
-		\fontspec{parisienne}
-		 \vspace*{3.8cm}
-		\begin{center}
-			\YUGE Emma och Johnnys bröllop
-		\end{center}
-		\vfill
-		\noindent
-		{\huge \textsf{Vigselprogam}}
-		\vskip\baselineskip
-		\noindent
-		\Large \textsf{6 Oktober 2018}
-	\end{titlepage}
+			\begin{tikzpicture}[remember picture,overlay, every node/.style={anchor=south west,inner sep=0pt}, x=1mm,y=1mm]   
+			\node[opacity=1.0] (fig1) at (-3.29cm,-15cm)
+				{\includegraphics[trim={12.5cm 17.2cm 0 0.0cm},clip, scale=1.35]{ornament.eps}};
+			\end{tikzpicture}
+			\par
+			\noindent
+			\fontspec{parisienne}
+			\vspace*{2.0cm}
+			\begin{center}
+				\YUGE Emma och Johnnys bröllop
+			\end{center}
+			%\vfill
+			\vspace*{7.5cm}
+			\noindent
+			{\huge \textsf{Vigselprogam}}
+			\vskip\baselineskip
+			\noindent
+			\Large \textsf{6 Oktober 2018}
+		\end{titlepage}
+
+	\restoregeometry
+	\newgeometry{top=1.5cm,bottom=1cm}
 	
-	\begin{center}
+	
+\begin{center}
 		
 		
 	\section{Klockringning}
@@ -65,9 +83,8 @@
 	\section{Inledningsmusik}
 	\vspace{0.4cm}
 	
-\begin{minipage}{\textwidth}	
-	\begin{center}
 	\section{Psalm - På bröllopsdagen ber vi}
+	\vspace{-0.3cm}
 	\textit{Melodi: Den blomstertid nu kommer} \\
 	\vspace{0.2cm}
 	På bröllopsdagen ber vi    \\
@@ -87,20 +104,20 @@
 	då lyckan vänligt ler,       \\
 	om trohet i vår kärlek,      \\
 	till dig, vår Gud, vi ber.   \\
-	\end{center}
-\end{minipage}
+	\vspace{0.2cm}
+
 	
 	\section{Inledningsord och bibelläsning}	
-
+	\vspace{0.4cm}
+	
 	\section{Solosång}
-	För dig, Lars Winnerbäck
-	\vspace{0.0cm}
+	\vspace{-0.4cm}
+	\textit{För dig, Lars Winnerbäck}
+	
 	
 	\section{Vigselakt}
 	\vspace{0.4cm}
 	
-\begin{minipage}{\textwidth}
-\begin{center}
 	\section{Psalm 84 - Vi lyfter våra hjärtan}
 	Vi lyfter våra hjärtan, till dig, o Fader vår, i tacksamhet och lovsång och bön för dessa två.      \\
 	\vspace{0.2cm}
@@ -108,19 +125,19 @@
 	\vspace{0.2cm}
 	Vi tackar för den glädje som du har gett åt dem. Välsigna deras framtid, välsigna deras hem.         \\
 	\vspace{0.2cm}
-	Tack, Fader, för den kärlek som gjorde dem till ett, det största du som gåva och ansvar åt oss gett. \\
-	
+	Tack, Fader, för den kärlek som gjorde dem till ett, det största du som gåva och ansvar åt oss gett. 
+
+	\vspace{0.2cm}
 	\section{Förbön}	
 	\vspace{0.4cm}
+	
 	\section{Fader vår}
 	\vspace{0.4cm}
+	
 	\section{Välsignelsen}	
 	\vspace{0.4cm}
-\end{center}
-\end{minipage}
-	
-\begin{minipage}{\textwidth}
-	\begin{center}
+
+	\newpage
 		\section{Psalm 791 - Du vet väl om att du är värdefull}
 		Du vet väl om att du är värdefull   \\
 		Att du är viktig här och nu         \\
@@ -140,22 +157,20 @@
 		Säga ja eller nej                          \\
 		\vspace{0.2cm}   
 		Du vet väl om …                            \\
-	\end{center}
-\end{minipage}
-\vspace{0.4cm}
+	\vspace{0.4cm}
 
-	\section{Avslutningsmusik}
+	\section{Tal av prästen}
+	\vspace{\fill} 
+	
+	\section{Utgångsmusik}
 \vspace{\fill} 
 
-\begin{minipage}{\textwidth}
-	\begin{center}
 	\section{\hfil Medverkande \hfil}
 	Vigselförrättare: Johan Lamberth \\
 	Kantor: Vivi Boozon \\
 	Solist: Laura Betnér, Fredrik Valdeson \\
 	
 	\end{center}
-\end{minipage}
-\end{center}
+
 
 \end{document}

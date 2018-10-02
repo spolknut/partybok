@@ -26,12 +26,19 @@
 \usepackage{titling}
 \usepackage{rotating}
 \usepackage{pdfpages}
+\usepackage{xargs}                      % Use more than one optional parameter in a new commands
+
 \newfontfamily\headingfont[]{parisienne}
 \titleformat*{\section}{\Huge\headingfont}
 \titleformat*{\subsection}{\LARGE\headingfont}
 \titleformat*{\subsubsection}{\large\headingfont}
 
-
+\usepackage[colorinlistoftodos,prependcaption,textsize=tiny]{todonotes}
+\newcommandx{\unsure}[2][1=]{\todo[linecolor=red,backgroundcolor=red!25,bordercolor=red,#1]{#2}}
+\newcommandx{\change}[2][1=]{\todo[linecolor=blue,backgroundcolor=blue!25,bordercolor=blue,#1]{#2}}
+\newcommandx{\info}[2][1=]{\todo[linecolor=OliveGreen,backgroundcolor=OliveGreen!25,bordercolor=OliveGreen,#1]{#2}}
+\newcommandx{\improvement}[2][1=]{\todo[linecolor=Plum,backgroundcolor=Plum!25,bordercolor=Plum,#1]{#2}}
+\newcommandx{\thiswillnotshow}[2][1=]{\todo[disable,#1]{#2}}
 \newcommand\YUGE{\fontsize{48}{60}\selectfont}
 
 %\renewcommand{\thesection}{}
@@ -68,34 +75,40 @@
  	
 \defpage
 	
+	
 	\begin{titlepage}
-		
+		\pagestyle{empty}
+		\newgeometry{top=1cm, left=2cm,bottom=0.1cm}
 		\noindent
-		%\includegraphics[width=2cm]{logo.jpg}\\[-1em]
+		\begin{tikzpicture}[remember picture,overlay, every node/.style={anchor=south west,inner sep=0pt}, x=1mm,y=1mm]   
+		\node[opacity=1.0] (fig1) at (-3.3cm,-15cm)
+		{\includegraphics[trim={12.5cm 17.2cm 0 0.0cm},clip, scale=1.35]{ornament.eps}};
+		\end{tikzpicture}
 		\par
 		\noindent
 		\fontspec{parisienne}
-		 \vspace*{3.8cm}
+		\vspace*{2.0cm}
 		\begin{center}
 			\YUGE Emma och Johnnys bröllop
 		\end{center}
-		\vfill
+		%\vfill
+		\vspace*{7.5cm}
 		\noindent
-		{\huge \textsf{Nu jävlar ska det firas!}}
+		{\huge \textsf{Nu jäklar ska det firas!}}
 		\vskip\baselineskip
 		\noindent
 		\Large \textsf{6 Oktober 2018}
 	\end{titlepage}
-	
+	\clearpage\mbox{}\clearpage
 	\begin{titlepage}
 	\fontspec{parisienne}
 	\begin{center}
-	\vspace*{2.8cm}
+	\vspace*{2.2cm}
 	\YUGE Välkomna
 	\vspace*{1.2cm}	
 	\end{center}
 	\begin{center}
-		\includegraphics[width=1\textwidth]{emmajohnny.jpg}
+		\includegraphics[width=0.92\textwidth]{emmajohnny-bw.png}
 	\end{center}
 	\newpage
 	\end{titlepage}
@@ -113,46 +126,42 @@
 	\newpage
 	
 	\section{Meny}
-	
+	\subsection*{Snittar}
 	\begin{spacing}{1.3}	
-		\subsection*{Snittar}
-
-\textcolor{red}{
 		Västerbottenssnitt med gräslökskräm och rödbetsskott \\
 		Polenta med sötpotatis och bönor \\
-		Hush puppies med ärtor och chilli \\
-}
-	\end{spacing}	
-
+		Hush puppies med ärtor och chilli
+	\end{spacing}
+	\vspace{-0.1cm}
+	
 	\subsection*{Huvudrätt}
-
-		
 	\begin{spacing}{1.3}
-\textcolor{red}{
-		Amerikansk ek- och hickoryrökig Oxbringa eller högrev \\ 
-		Cajunkryddad och sotat norsk fjordlax med aska och frön \\
+		Amerikansk ek- och hickoryrökig högrev \\  
+		Cajunkryddad och sotat norsk fjordlax med aska och frön   \\
 		Getost med betor, picklade steklökar samt getostdressing. \\
-		Krispig sötpotatis med gräslöksdressing och granatäpple \\
+		Krispig sötpotatis med gräslöksdressing och granatäpple   \\
 		Roman- och frisésallad, med rostade valnötter, caesardressing och vitlökskrutonger \\
-		Rostade morötter saltbakad rotselleri och solrosfrön \\
+		Rostade morötter saltbakad rotselleri och solrosfrön      \\
 		Rökta tomater i nötter, honung och puffat vete \\
 		Rostad blomkål med tryffeljord  \\
 		Surdegsbröd \\
-		Örtsmör \\
-}
+		Örtsmör
 	\end{spacing}	
-
-		\subsection*{Fördessert}
-\textcolor{red}{
-		Citronbavaroise med dillpulver och smetanasorbet
-}		
-		\subsection*{Tårta}
-
-		\begin{spacing}{1.3}
-\textcolor{red}{
+	
+	\vspace{-0.1cm}
+	\subsection*{Fördessert och avec}
+	\begin{spacing}{1.3}
+		Citronbavaroise med dillpulver och smetanasorbet \\ 
+		Ardbeg Islay Single Malt Scotch Whisky \\ 
+		Aultmore Speyside Single Malt Scotch Whisky \\
+		Baileys
+	\end{spacing}
+	\vspace{-0.1cm}
+	
+	\subsection*{Tårta}
+	\begin{spacing}{1.3}
 		Chokladmousse fylld med körsbär- och vaniljpannacotta, dekorerad med chokladflarn, vaniljmaränger och jordgubbsmakroner
-}
-		\end{spacing}
+	\end{spacing}
 
 	
 	\newpage
@@ -160,21 +169,74 @@
 	Fritt fram att dräpa dryck i baren!
 		
 	\subsection*{Öl}
-\textcolor{red}{
-	TBD
-}	
-	\subsection*{Vin}
-\textcolor{red}{
-	Rött: 
-	TBD
-}
+	\vspace{-0.2cm}
+	\begin{itemize}
+		\item Carlsberg Brewmasters American Pale Ale
+		\item Åbro Brygg Mästarens Pale Ale 
+		\item Mariestads Export
+		\item Carlsberg
+	\end{itemize}
 
+	\subsection*{Cider och alkoläsk}
+	\vspace{-0.2cm}
+	\begin{itemize}
+		\item Somersby Pear Cider
+		\item Somersby Elderflower Lime Cider
+		\item Hartwall Cool Grape Long Drink
+	\end{itemize}
+	 
+		
+	\subsection*{Vin}
+	\vspace{-0.2cm}
+	\begin{itemize}
+		\item Rött, Zensa Primitivo 
+		\item Vitt, Foot Of Africa Reserve Chenin Blanc 
+	\end{itemize}
+
+	\subsection*{Sprit i baren}
+	\vspace{-0.2cm}
+	\begin{itemize}
+		\item Beefeater London Dry Gin
+		\item Bacardí Razz
+		\item Havana Club 7 
+		\item Islay Mist Blended
+	\end{itemize}
+
+	
 	\subsection*{Alkoholfritt}
-\textcolor{red}{
-	TBD
-}	
+	\vspace{-0.2cm}
+	\begin{itemize}
+		\item ... 
+		\item ... 
+		\item ... 
+		\item ...
+	\end{itemize}
+	
 	
 	\newpage
+
+\section{Svar tipspromenad}
+\begin{center}
+	\renewcommand{\arraystretch}{1.4}	
+	\begin{tabular}{| p{0.25cm} | Q | T | T | T | }
+		\hline
+		&	Fråga	&	1	&	X	&	2	\\ \hline
+		1	&	När träffades Johnny och Emma första gången?	&	\circletext{\textbf{På en konsert med Winnerbäck}}	&	En studentfest hos Gabbi	&	På Roberts 30årsfest	\\ \hline
+		2	&	Vart gick brudparets första gemensamma utlandsresa?	&	\circletext{\textbf{Rom}}	&	Köpenhamn	&	Amsterdam	\\ \hline
+		3	&	Vems idé var det att springa marathon?	&	\circletext{\textbf{Emmas}}	&	Alexander Hansens	&	Johnnys	\\ \hline
+		4	&	Hur många marathonlopp har brudparet sprungit sammanlagt?	&	4	&	\circletext{\textbf{5}}	&	7	\\ \hline
+		5	&	Hur länge har brudparet bott ihop	&	3år	&	\circletext{\textbf{4år}}	&	5år	\\ \hline
+		6	&	Emmas tjejgäng från Lund kallas för BP. Vad står egentligen BP för?	&	\circletext{\textbf{Blodpudding}}	&	Bara Pattar	&	Bastupinglorna	\\ \hline
+		7	&	Vilken rätt lagade Johnny på första daten?	&	\circletext{\textbf{Tacopaj}}	&	Hamburgare	&	Våffelmackor	\\ \hline
+		8	&	Johnny kan många programmeringsspråk, men vilket kan Emma?	&	Matlab	&	C++	&	\circletext{\textbf{Java}} 	\\ \hline
+		9	&	Vem bodde Johnny inte med i Prag?	&	Joel	&	\circletext{\textbf{Carl-David}}	&	Amir	\\ \hline
+		10	&	Vilken var Johnny och Emmas första bil?	&	Saab 9-3	&	Kia Soul	&	\circletext{\textbf{Volvo V40}}	\\ \hline
+		11	&	Hur många brädspel, exklusive expansioner, har brudparet?	&	\circletext{\textbf{22}}	&	25	&	27	\\ \hline
+		12	&	Hur många tältnätter har Emma och Johnny gjort ihop?	&	16	&	19	&	\circletext{\textbf{21}}	\\ \hline
+		
+	\end{tabular}
+\end{center}
+\newpage
 
 	\restoregeometry % restores the geometry
 	
@@ -185,22 +247,20 @@
 	
 	\node[inner sep=0pt] (borsplacering) at (-8.6, -4.2) {\includegraphics[width=1.4\paperwidth]{bordsplacering.png}} ;
 	
-	\node[] (Bord 1) at (-16.9, -0.6) {\large \circled{1}};
-	\node[] (Bord 2) at (-14.5, -0.6) {\large \circled{2}};
-	\node[text=purple] at (-8.5, -8) {\large Honnörsbordet};
-	\node[] (Bord 3) at (-4.2, -0.5) {\large \circled{3}};
-	\node[] (Bord 4) at (-1.8, -0.5) {\large \circled{4}};
+	%\node[] (Bord 1) at (-16.5, -0.6) {\large \circled{1}};
+	\node[rotate=54.5] (Bord 1) at (-16.5, -0.6) {\large Amsterdam};
+	\node[] at (-8.8, 0) {\large Honnörsbordet};
+	\node[rotate=54.5] (Bord 2) at (-16.5, -4.1) {\large Rom};
 	% Rad 2		
-	\node[] (Bord 5) at (-16.9, -4.1) {\large \circled{5}};
-	\node[] (Bord 6) at (-14.3, -4.1) {\large \circled{6}};
-	\node[] (Bord 7) at (-11.5, -4.1) {\large \circled{7}};
-	\node[] (Bord 8) at (-5.2, -4.1) {\large \circled{8}};
-	\node[] (Bord 9) at (-2.3, -4.1) {\large \circled{9}};
+	\node[rotate=54.5] (Bord 3) at (-16.4, -7.9) {\large Tjuonavagge};
+	\node[rotate=54.5] (Bord 4) at (-13.3, -2.4) {\large Olserum};
+	\node[rotate=54.5] (Bord 5) at (-12.0, -5.3) {\large Sommarhagen};
+	\node[rotate=-54.5] (Bord 6) at (-4.5, -2.4) {\large Djurgårdsgatan};
 	% Rad 3
-	\node[] (Bord 10) at (-16.5, -7.9) {\large \circled{10}};
-	\node[] (Bord 11) at (-13.8, -7.9) {\large \circled{11}};
-	\node[] (Bord 12) at (-3.4, -7.9) {\large \circled{12}};
-	\node[] (Bord 13) at (-0.5, -7.9) {\large \circled{13}};
+	\node[rotate=-54.5] (Bord 7) at (-5.15, -5.4) {\large Skolgatan};
+	\node[rotate=-54.5] (Bord 8) at (-1.8, -0.5) {\large Vätö};
+	\node[rotate=-54.5] (Bord 9) at (-0.7, -4.6) {\large New York};
+	\node[rotate=-54.5] (Bord 10) at (-0.8, -7.8) {\large Death Valley};
 	
 	\node[] (Page no) at (7.8,-11.5) {\thepage};
 	\end{tikzpicture}
@@ -236,9 +296,9 @@
 				Anna Möller	&	Vän till bruden från universitetet och medlem i BP'. Lantmätare i Uppsala, med rötter i Strängnäs som gärna sjunger i skalor. Sambo med Erik P.	\\
 				Anna Våhlin	&	Vän till bruden från gymnasiet. Pysslig Linköpingsbo som gärna hänger på Gotland.	\\
 				Anna-Ida Bergström	&	Fru till brudens kusin Mikael. Dalkulla boende i Stockholm. Skidtränare med stort löpintresse.	\\
-				Annabel Merkel	&	Kusin till brudgummen. Hästintresserad med stort resintresse. Boendes i Malmö, kombo med magiska kaninen Merlin	\\
+				Annabel Merkel	&	Kusin till brudgummen. Hästintresserad med stort resintresse. Boendes i Malmö, roomie med magiska kaninen Merlin	\\
 				Annika Andersson	&	Vän till bruden från universitetet och medlem i BP. Lantmätare från Eslöv, nu boende i Ängelholm. En hejare på att göra shots. Sambo med Björn A. \\
-				Axel Merkel	&	Kusin till brudgummen och TM kvällen till ära. Bor och doktorerar i Molde, Norge. Föredetta kombo med brudgummen, på den tiden då broccoli var för dyrt 	\\
+				Axel Merkel	&	Kusin till brudgummen och TM kvällen till ära. Bor och doktorerar i Molde, Norge. Föredetta roommate med brudgummen, på den tiden då broccoli var för dyrt 	\\
 				Birgitta Merkel	&	Farmor till brudgummen. Bridgespelare, reser gärna både utrikes och inrikes till släkt och vänner. 	\\
 				Björn Andersson	&	Sambo till Annika. Stor BP-supporter. Trodde vid tillfälle att bruden var frireligös.	\\
 				Björn Karmbro	&	Morfar till brudgummen. Golfspelare med IT-intresse, går gärna promenader.  	\\
@@ -295,8 +355,8 @@
 				Mattias Kardell	&	Barndomsvän till brudgummen. Lärde känna brudgummen via SS Allians. Flyttat tillbaka till schlätten efter flera år i Göteborg.	\\
 				Mikael Bergström	&	Kusin till bruden. Stockholmsbo men tidigare dalmas. Bygger på stugprojekt på sommaren och skjutsar till skidbackar på vintern. Gift med Anna-Ida.	\\
 				Moa Chley Tegnelund	&	Vän till bruden från universitetet och medlem i BP. Lantmätare och stolt norrbottning boende i Malmö. Gillar beachvolleyboll och resor med rosabussarna.  	\\
-				Ooy Ingmansson	&	Brudens morbror Pers fru. Trebarnsmor och en hejare på att klippa gräsmattan.	\\
-				Per Ingmansson	&	Brudens morbror. Har släktens rekord på marathon. Skogsägare som gärna jagar. 	\\
+				Ooy Ingmanson	&	Brudens morbror Pers fru. Trebarnsmor och en hejare på att klippa gräsmattan.	\\
+				Per Ingmanson	&	Brudens morbror. Har släktens rekord på marathon. Skogsägare som gärna jagar. 	\\
 				Per Wahlstedt	&	Sambo till brudgummens syster Rebecka. Stor frisbeenörd som då och då bulkar på gymmet. 	\\
 				Peter Levin	&	Vän till brudparet. Lärde känna brudparet via Runacedemy. Driven idrottslärare som är snabb i löpspåret.	\\
 				Rebecka Merkel	&	Brudgummens lillasyster. Frisbee-älskande Lundabo som blåser fram på rullskidor i snöfattiga Skåne. Vinner gärna över sin bror i brädspel. Sambo med Per. 	\\
@@ -312,7 +372,7 @@
 				Stefan Wass	&	Vän till brudgummen från gymnasiet och bestman kvällen till ära. Motorcykelförsäljare som sprungit in på 36:e plats på Göteborgsvarvet.	\\
 				Thomas Niwong	&	Gift med brudens kusin Helena. Dalmas, numera stockholmsbo. Syns inte i rutan men verkar i bakgrunden.	\\
 				Tobias Möller	&	Kusin till brudgummen. Boende i Lund, fotbollsspelare och stor MFF-supporter.	\\
-				Victoria Wahlbom Helström	&	Vän till brudparet. Ironmaniac med många cyklar som sprungit många långa ibland isiga löprundor med brudparet. Sambo med Gustav Svanfeldt.	\\
+				Victoria Wahlbom Hellström	&	Vän till brudparet. Ironmaniac med många cyklar som sprungit många långa ibland isiga löprundor med brudparet. Sambo med Gustav Svanfeldt.	\\
 				Victor Ingemansson	&	Gift med Caroline och BP-stalker. Malmöbo men IFK Göteborgssupporter som besegrat Kullamannen dubbeldöden och sprungit marathon med brudparet.	\\
 				Wiktor Holstenson	&	Vän till brudgummen från gymnasiet. Norrköpingsbo och sportfiskare med båten ständigt på släp. Friterar goda pommes till efterfesten. 	\\
 		\end{longtable}
@@ -321,7 +381,7 @@
 		
 	\section{Sånger}
 	
-	\subsection{Jag har aldrig var't på snusen}
+	\subsection{Sång 1 - Jag har aldrig var't på snusen}
 		\textit{Melodi: O, hur saligt att få vandra} \\
 		
 		\noindent 
@@ -352,7 +412,7 @@
 		\noindent
 		Halleluja, Halleluja…
 	\newpage
-	\subsection{Bordeaux, Bordeaux}
+	\subsection{Sång 2 - Bordeaux, Bordeaux}
 		\textit{Melodi: I sommarens soliga dagar} \\
 		
 		\noindent
@@ -371,7 +431,7 @@
 		och skrek så vi blev blå:\\
 		”Bordeaux, Bordeaux!” \\
 
-		\subsection{Feta Fransyskor}
+	\subsection{Sång 3 - Feta Fransyskor}
 		\textit{Melodi: Marche Militaire} \\
 		
 		\noindent
@@ -391,7 +451,7 @@
 		\newpage
 		
 		
-\subsection{Lantmätarens testamente}
+\subsection{Sång 4 - Lantmätarens testamente}
 \textit{Mellodi: She'll be coming down the mountin} \\
 
 \noindent
@@ -414,7 +474,7 @@ ty i kalla, blöta kalken \\
 gäller inte jordabalken \\
 Du ska få min gamla lagbok när jag dör. \\
 
-\subsection{Siffervisan}
+\subsection{Sång 5 - Siffervisan}
 \textit{Melodi: Ritsch, ratsch} \\
 	
 \noindent
@@ -429,7 +489,7 @@ Du ska få min gamla lagbok när jag dör. \\
 
 \newpage
 
-\subsection{Finland}
+\subsection{Sång 6 - Finland}
 \textit{Melodi: Högt över havet} \\
 
 \noindent 
@@ -462,7 +522,7 @@ Ullared, Abba och Absolut, \\
 Nu är visan slut. \\
 
 
-\subsection{Mera brännvin i glasen}
+\subsection{Sång 7 - Mera brännvin i glasen}
 \textit{Melodi: Internationalen} \\
 
 \noindent
@@ -479,7 +539,7 @@ mera Skåne, Gud bevars, bevars, bevars! \\
 
 
 \newpage
-\subsection{Spritbolaget}
+\subsection{Sång 8 - Spritbolaget}
 
 \textit{Melodi: Du käre lille snickerbo’} \\
 
@@ -503,7 +563,7 @@ så nu kan jag bli full och glad. \\
 Den röda drycken åkte ner… \\
 Nu kan jag inte se nå’t mer	\\
 	
-\subsection{Strejk på pripps}
+\subsection{Sång 9 - Strejk på pripps}
 \textit{Melodi: I natt jag drömde}\\
 
 \noindent
@@ -525,29 +585,6 @@ vårt mål alkohol!\\
 För dem som tål! - SKÅL\\
 \newpage
 
-
-\section{Svar tipspromenad}
-\begin{center}
-\renewcommand{\arraystretch}{1.4}	
-\begin{tabular}{| p{0.25cm} | Q | T | T | T | }
-		\hline
-	&	Fråga	&	1	&	X	&	2	\\ \hline
-	1	&	När träffades Johnny och Emma första gången?	&	\circletext{\textbf{På en konsert med Winnerbäck}}	&	En studentfest hos gabbi	&	På Roberts 30årsfest	\\ \hline
-	2	&	Vilken var brudparets första utlandsresa tillsammans?	&	\circletext{\textbf{Rom}}	&	Köpenhamn	&	Amsterdam	\\ \hline
-	3	&	Vems idé var det att springa marathon?	&	\circletext{\textbf{Emmas}}	&	Alexander Hansens	&	Johnnys	\\ \hline
-	4	&	Hur många marathonlopp har brudparet sprungit sammanlagt?	&	4	&	\circletext{\textbf{5}}	&	7	\\ \hline
-	5	&	Hur länge har brudparet bort ihop	&	3år	&	\circletext{\textbf{4år}}	&	5år	\\ \hline
-	6	&	Emmas tjejgäng från Lund kallas för BP. Vad står egentligen BP för?	&	\circletext{\textbf{Blodpudding}}	&	Bara Pattar	&	Bandypunk	\\ \hline
-	7	&	Vad bjöd Johnny på första daten?	&	\circletext{\textbf{Tacopaj}}	&	Hamburgare	&	Våffelmackor	\\ \hline
-	8	&	Johnny kan många programmeringsspråk, men vilket kan Emma?	&	Matlab	&	C++	&	\circletext{\textbf{Java}} 	\\ \hline
-	9	&	Vem bodde Johnny inte med i Prag?	&	Joel	&	\circletext{\textbf{Carl-David}}	&	Amir	\\ \hline
-	10	&	Vilken var Johnny och Emmas första bil?	&	Saab 9-3	&	Kia Soul	&	\circletext{\textbf{Volvo V40}}	\\ \hline
-	11	&	Hur många brädspel, exklusive expansioner, har brudparet?	&	\circletext{\textbf{22}}	&	25	&	27	\\ \hline
-	12	&	Hur många tältnätter har Emma och Johnny gjort ihop?	&	16	&	19	&	\circletext{\textbf{21}}	\\ \hline
-
-	\end{tabular}
-\end{center}
-\newpage
 
 \section{Tack}
 Stort tack till alla er som är här och hjälper oss att förgylla vår dag! \\ \\
